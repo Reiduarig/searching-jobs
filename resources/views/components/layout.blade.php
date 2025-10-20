@@ -7,8 +7,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+    {{-- <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" /> --}}
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -22,16 +22,16 @@
                 </a>
             </div>
             <div class="space-x-6 font-bold">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                <a href="#">Link 4</a>
+                <a href="#">Trabajos</a>
+                <a href="#">Carreras</a>
+                <a href="#">Salarios</a>
+                <a href="#">Compañias</a>
             </div>
             <div>
                 <a href="#">Postear</a>
             </div>
         </nav>
-        <main>
+        <main class="max-w-[986px] mx-auto">
             {{ $slot }}
         </main>
     </div>
