@@ -1,20 +1,15 @@
 <x-layout>
     <div class="space-y-10">
         <section class="text-center pt-6">
-            <h1 class="font-bold text-4xl">Encuentra el trabajo de tus sueños</h1>
-            <form action="#" class="mt-6">
-                <input 
-                    type="text" 
+            <h1 class="font-bold text-4xl">Encuentra el trabajo de tus sueños</h1>    
+            <x-forms.form action="/search" class="mt-6">
+                <x-forms.input 
+                    name="q" 
                     placeholder="¿Qué trabajo estás buscando?" 
+                    :label="false"
                     class="w-full max-w-xl bg-white/5 placeholder-gray-400 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:bg-white/10 transition"
-                >
-                <button 
-                    type="submit" 
-                    class="bg-blue-800 hover:bg-blue-900 text-white font-bold rounded-xl px-5 py-3 transition"
-                >
-                    Buscar
-                </button>
-            </form>
+                />
+            </x-forms.form>
         </section>
         <section class="pt-10">
             <x-section-heading>Trabajos Destacados</x-section-heading>
