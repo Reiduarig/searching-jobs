@@ -1,4 +1,5 @@
 @props([
+    'tag',
     'size' => 'base'
 ])
 
@@ -16,5 +17,5 @@
     href="#" 
     class="{{ $classes }}"
 >
-    {{ $slot }}
+    {{ $tag->name }}
 </a>
