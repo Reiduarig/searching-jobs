@@ -13,6 +13,6 @@
         <x-forms.input label="Nombre del empleador" name="employer" />
         <x-forms.input label="Logo del empleador" name="logo_url" type="file" />
 
-        <x-forms.button>Creat cuenta</x-forms.button>
+        <x-forms.button>Crear cuenta</x-forms.button>
     </x-forms.form>
 </x-layout>
