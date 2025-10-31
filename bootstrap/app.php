@@ -11,7 +11,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->web([
+            // Middleware web global
+        ]);
+        
+        $middleware->alias([
+            'employer' => \App\Http\Middleware\EnsureUserIsEmployer::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
