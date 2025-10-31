@@ -43,26 +43,37 @@ class JobController extends Controller
     {
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'salary' => ['required', 'numeric'],
+            'description' => ['nullable', 'string'],
+            'salary_min' => ['nullable', 'numeric', 'min:0'],
+            'salary_max' => ['nullable', 'numeric', 'min:0', 'gte:salary_min'],
+            'salary_period' => ['required', 'string', Rule::in(['hour', 'day', 'week', 'month', 'year'])],
             'location' => ['required', 'string', 'max:255'],
-            'schedule' => ['required', 'string', Rule::in(['full-time', 'part-time', 'contract'])],
+            'schedule' => ['required', 'string', Rule::in(['full-time', 'part-time', 'contract', 'internship'])],
+            'experience_level' => ['nullable', 'string', Rule::in(['entry', 'mid', 'senior', 'lead'])],
+            'education' => ['nullable', 'string', Rule::in(['none', 'high_school', 'bachelor', 'master', 'phd'])],
+            'benefits' => ['nullable', 'array'],
             'url' => ['required', 'active_url'],
             'featured' => ['boolean'],
-            'tags' => ['nullable'],
+            'urgent' => ['boolean'],
+            'duration' => ['nullable', 'integer', 'min:1'],
+            'tags' => ['nullable', 'string'],
         ]);
 
-        $validated['featured'] = $request->has('featured');
+        // Process boolean fields
+        $validated['featured'] = $request->boolean('featured');
+        $validated['urgent'] = $request->boolean('urgent');
 
         // Create the job without tags
-        $job =Auth::user()->employer->jobs()->create(Arr::except($validated, 'tags'));
+        $job = Auth::user()->employer->jobs()->create(Arr::except($validated, 'tags'));
 
+        // Handle tags
         if($validated['tags'] ?? false) {
-            foreach(explode(',', $validated['tags']) as $tag) {  // Assuming tags are sent as a comma-separated string
+            foreach(explode(',', $validated['tags']) as $tag) {
                 $job->tag(trim($tag));
             }
         }
 
-        return redirect()->route('jobs')->with('success', 'Job created successfully.');
+        return redirect('/')->with('success', 'Trabajo creado exitosamente.');
     }
 
     /**
@@ -70,7 +81,33 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        //
+        $job->load(['employer', 'tags', 'applications']);
+        
+        // Verificar si el usuario actual ya aplicó a este trabajo
+        $hasApplied = false;
+        if (Auth::check() && Auth::user()->isCandidate()) {
+            $hasApplied = Auth::user()->hasAppliedTo($job);
+        }
+        
+        // Verificar si el usuario actual tiene este trabajo guardado
+        $isSaved = false;
+        if (Auth::check() && Auth::user()->isCandidate()) {
+            $isSaved = Auth::user()->savedJobs()->where('job_id', $job->id)->exists();
+        }
+        
+        // Trabajos relacionados (mismas tags o mismo empleador)
+        $relatedJobs = Job::where('id', '!=', $job->id)
+            ->where(function($query) use ($job) {
+                $query->where('employer_id', $job->employer_id)
+                      ->orWhereHas('tags', function($q) use ($job) {
+                          $q->whereIn('name', $job->tags->pluck('name'));
+                      });
+            })
+            ->with(['employer', 'tags'])
+            ->take(3)
+            ->get();
+        
+        return view('jobs.show', compact('job', 'hasApplied', 'isSaved', 'relatedJobs'));
     }
 
     /**
