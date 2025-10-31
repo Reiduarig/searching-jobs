@@ -32,7 +32,7 @@ class SessionController extends Controller
         // Previene ataques de sesión hijacking, regenerando la sesión
         request()->session()->regenerate();
 
-        return redirect('/')->with('success', 'Has iniciado sesión correctamente');
+        return redirect()->route('dashboard')->with('success', 'Has iniciado sesión correctamente');
     }
 
    
