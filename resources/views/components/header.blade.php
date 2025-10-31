@@ -29,9 +29,24 @@
             <div class="flex items-center space-x-4">
                 <div class="hidden md:flex items-center space-x-4">
                     @auth
-                        <a href="/jobs/create" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
-                            Publicar Trabajo
+                        <!-- Dashboard link -->
+                        <a href="{{ route('dashboard') }}" class="text-slate-300 hover:text-white font-medium transition-colors duration-200 hover:bg-slate-800/50 px-3 py-2 rounded-lg flex items-center space-x-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2V5a2 2 0 012-2h14a2 2 0 012 2v2"></path>
+                            </svg>
+                            <span>Dashboard</span>
                         </a>
+                        
+                        @if(auth()->user()->isCandidate())
+                            <!-- Los candidatos acceden a aplicaciones y favoritos desde el dashboard -->
+                        @endif
+                        
+                        @if(auth()->user()->isEmployer())
+                            <a href="/jobs/create" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+                                Publicar Trabajo
+                            </a>
+                        @endif
+                        
                         <form method="POST" action="/logout" class="inline">
                             @csrf
                             @method('DELETE')
