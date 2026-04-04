@@ -2,7 +2,7 @@
     'job'
 ])
 
-<x-panel class="group">
+<x-panel class="group" useTranslated="true">
     <div class="flex flex-col md:flex-row gap-6 items-start">
         <!-- Logo y empresa -->
         <div class="flex items-center space-x-4 md:min-w-0 md:w-64">

@@ -2,23 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\JobSearchService;
+use App\Services\TagService;
 use Illuminate\Http\Request;
-use App\Models\Job;
 
 class SearchController extends Controller
 {
+    public function __construct(
+        private JobSearchService $jobSearchService,
+        private TagService $tagService
+    ) {}
+
     public function __invoke(Request $request)
     {
-        $query = $request->input('q');
+        $results = $this->jobSearchService->search($request);
+        $tags = $this->tagService->getAllTags();
 
-        $results = Job::where('title', 'like', '%' . $query . '%')
-            ->with(['employer', 'tags'])
-            ->get();
-
-        // Retorna una vista con los resultados de la búsqueda
         return view('search-results', [
-            'query' => $query,
-            'results' => $results
+            'query' => $request->input('search'),
+            'results' => $results,
+            'tags' => $tags,
+            'filters' => $request->all(),
         ]);
     }
 }

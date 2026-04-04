@@ -21,8 +21,8 @@ return new class extends Migration
             $table->json('questions_answers')->nullable(); // Para respuestas a preguntas específicas del empleador
             $table->timestamp('applied_at');
             $table->timestamps();
-            
-            // Evitar aplicaciones duplicadas
+
+            // Evitar candidaturas duplicadas
             $table->unique(['user_id', 'job_id']);
         });
     }

@@ -1,7 +1,7 @@
 @props(['tags', 'locations', 'salaryRanges'])
 
 <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 mb-8">
-    <form action="/jobs" method="GET" class="space-y-6">
+    <form action="/search" method="GET" class="space-y-6">
         <!-- Barra de búsqueda principal -->
         <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -93,13 +93,13 @@
 
         <!-- Botones de acción -->
         <div class="flex flex-col sm:flex-row gap-3">
-            <button type="submit" class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">
+            <button type="submit" class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-lg cursor-pointer">
                 🔍 Buscar Trabajos
             </button>
-            <a href="/jobs" class="flex-1 sm:flex-none bg-slate-700/30 hover:bg-slate-700/50 border border-slate-600/50 text-slate-300 hover:text-white font-medium px-6 py-3 rounded-xl transition-all text-center">
+            <a href="/search" class="flex-1 sm:flex-none bg-slate-700/30 hover:bg-slate-700/50 border border-slate-600/50 text-slate-300 hover:text-white font-medium px-6 py-3 rounded-xl transition-all text-center">
                 Limpiar Filtros
             </a>
-            <button type="button" id="save-search" class="flex-1 sm:flex-none bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 text-green-400 hover:text-green-300 font-medium px-6 py-3 rounded-xl transition-all">
+            <button type="button" id="save-search" class="flex-1 sm:flex-none bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 text-green-400 hover:text-green-300 font-medium px-6 py-3 rounded-xl transition-all cursor-pointer">
                 💾 Guardar Búsqueda
             </button>
         </div>

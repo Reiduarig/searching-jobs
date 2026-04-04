@@ -67,7 +67,7 @@
                             </div>
                             <div class="flex-1">
                                 <label for="new_applications" class="font-medium text-slate-900">
-                                    Nuevas Aplicaciones
+                                    Nuevas Candidaturas
                                 </label>
                                 <p class="text-slate-600 text-sm">
                                     Recibir notificaciones cuando los candidatos apliquen a tus empleos publicados.
@@ -90,10 +90,10 @@
                             </div>
                             <div class="flex-1">
                                 <label for="status_changes" class="font-medium text-slate-900">
-                                    Cambios de Estado de Aplicaciones
+                                    Cambios de Estado de Candidaturas
                                 </label>
                                 <p class="text-slate-600 text-sm">
-                                    Recibir notificaciones cuando el estado de tus aplicaciones cambie (en revisión, aceptada, rechazada).
+                                    Recibir notificaciones cuando el estado de tus candidaturas cambie (en revisión, aceptada, rechazada).
                                 </p>
                             </div>
                             <i class="fas fa-sync-alt text-slate-400 mt-1"></i>

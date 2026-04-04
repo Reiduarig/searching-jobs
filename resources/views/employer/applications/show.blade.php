@@ -13,7 +13,7 @@
             <div class="mt-4 md:mt-0 flex space-x-3">
                 <a href="{{ route('employer.applications') }}" class="bg-slate-700/50 hover:bg-slate-700 text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2">
                     <i class="fas fa-arrow-left"></i>
-                    <span>Volver a Aplicaciones</span>
+                    <span>Volver a Candidaturas</span>
                 </a>
                 <button onclick="openStatusModal({{ $application->id }}, '{{ $application->status }}')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2">
                     <i class="fas fa-edit"></i>
@@ -216,13 +216,13 @@
                     </div>
                     
                     <div class="flex items-center justify-between">
-                        <span class="text-slate-400 text-sm">Total aplicaciones:</span>
+                        <span class="text-slate-400 text-sm">Total candidaturas:</span>
                         <span class="text-white text-sm font-medium">{{ $application->job->applications()->count() }}</span>
                     </div>
                 </div>
 
                 <a href="{{ route('employer.applications', ['job_id' => $application->job->id]) }}" class="w-full mt-4 bg-slate-700 hover:bg-slate-600 text-white py-2 px-4 rounded-lg font-medium transition-colors block text-center">
-                    Ver Todas las Aplicaciones
+                    Ver Todas las Candidaturas
                 </a>
             </div>
 

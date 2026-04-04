@@ -59,11 +59,11 @@
     
     <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 16px; margin: 20px 0;">
         <p style="margin: 0; color: #92400e; font-size: 14px;">
-            <strong>💡 Consejo:</strong> Responde rápidamente a las aplicaciones para mantener el interés de los candidatos. Los mejores talentos suelen tener múltiples opciones.
+            <strong>💡 Consejo:</strong> Responde rápidamente a las candidaturas para mantener el interés de los candidatos. Los mejores talentos suelen tener múltiples opciones.
         </p>
     </div>
     
     <p style="color: #64748b; font-size: 14px; margin: 20px 0 0 0;">
-        Puedes revisar esta aplicación y gestionar todas tus aplicaciones desde tu dashboard de empleador.
+        Puedes revisar esta aplicación y gestionar todas tus candidaturas desde tu dashboard de empleador.
     </p>
 @endsection

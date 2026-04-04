@@ -36,15 +36,15 @@
         <!-- Menú móvil -->
         <x-menu-responsive />
         <!-- Contenido principal -->
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-8">
             {{ $slot }}
         </main>
 
         <!-- Footer -->
         <x-footer />
-        
-        <!-- Modal global de aplicaciones -->
-        <x-application-modal />
+
+        <!-- Modal global de candidaturas -->
+        {{-- <x-application-modal /> --}}
     </div>
 
     <!-- Chatbot de atención al cliente -->

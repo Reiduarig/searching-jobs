@@ -25,9 +25,7 @@
     <!-- Contenido principal -->
     <div class="flex-1 space-y-3">
         <h3 class="group-hover:text-blue-400 text-lg font-bold transition-colors duration-300 line-clamp-2">
-            <a href="{{ route('jobs.show', $job) }}" class="block">
-                {{ $job->title }}
-            </a>
+            {{ $job->title }}
         </h3>
         
         <div class="flex items-center space-x-4 text-sm text-slate-400">

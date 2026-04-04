@@ -235,7 +235,7 @@
                         </div>
                     @endif
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Aplicaciones:</span>
+                        <span class="text-slate-400">Candidaturas:</span>
                         <span class="text-white font-medium">{{ $job->applications->count() }}</span>
                     </div>
                 </div>

@@ -90,6 +90,32 @@
     background: linear-gradient(135deg, #2563eb, #7c3aed);
 }
 
+/* Clases de utilidad para scrollbar */
+.scrollbar-thin {
+    scrollbar-width: thin;
+}
+
+.scrollbar-none {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none; /* WebKit */
+}
+
+.scrollbar-track-slate-800\/50::-webkit-scrollbar-track {
+    background: rgba(30, 41, 59, 0.5);
+}
+
+.scrollbar-thumb-slate-600\/50::-webkit-scrollbar-thumb {
+    background: rgba(71, 85, 105, 0.5);
+}
+
+.scrollbar-thumb-slate-500\/70:hover::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.7);
+}
+
 /* Efectos de texto gradiente */
 .text-gradient {
     background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);

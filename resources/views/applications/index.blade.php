@@ -4,8 +4,8 @@
         <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
-                    <h1 class="text-2xl font-bold text-white">Mis Aplicaciones</h1>
-                    <p class="text-slate-400">Gestiona y sigue el estado de tus aplicaciones de trabajo</p>
+                    <h1 class="text-2xl font-bold text-white">Mis Candidaturas</h1>
+                    <p class="text-slate-400">Gestiona y sigue el estado de tus candidaturas de trabajo</p>
                 </div>
                 <div class="mt-4 md:mt-0">
                     <a href="{{ route('jobs') }}" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
@@ -178,7 +178,7 @@
             </form>
         </div>
 
-        <!-- Lista de aplicaciones -->
+        <!-- Lista de candidaturas -->
         <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl border border-slate-700/50 overflow-hidden">
             <div class="p-6 border-b border-slate-700/50">
                 <div class="flex items-center justify-between">
@@ -186,9 +186,9 @@
                         <h2 class="text-xl font-bold text-white">
                             @if(request()->hasAny(['status', 'company', 'job_title', 'date_range', 'date_from', 'date_to']) && 
                                 (request('status') !== 'all' || request('company') || request('job_title') || request('date_range') !== 'all' || request('date_from') || request('date_to')))
-                                Aplicaciones Filtradas
+                                Candidaturas Filtradas
                             @else
-                                Todas las Aplicaciones
+                                Todas las Candidaturas
                             @endif
                         </h2>
                         @if(request()->hasAny(['status', 'company', 'job_title', 'date_range', 'date_from', 'date_to']) && 
@@ -280,7 +280,7 @@
                     <svg class="mx-auto h-16 w-16 text-slate-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                     </svg>
-                    <h3 class="text-lg font-medium text-white mb-2">No tienes aplicaciones aún</h3>
+                    <h3 class="text-lg font-medium text-white mb-2">No tienes candidaturas aún</h3>
                     <p class="text-slate-400 mb-6">¡Empieza a aplicar a trabajos y construye tu carrera profesional!</p>
                     <a href="{{ route('jobs') }}" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
                         Explorar trabajos

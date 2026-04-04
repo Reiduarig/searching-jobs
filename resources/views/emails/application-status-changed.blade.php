@@ -85,7 +85,7 @@
     
     <div style="text-align: center; margin: 30px 0;">
         <a href="{{ config('app.url') }}/applications" class="btn">
-            Ver Mis Aplicaciones
+            Ver Mis Candidaturas
         </a>
     </div>
     
@@ -98,6 +98,6 @@
     @endif
     
     <p style="color: #64748b; font-size: 14px; margin: 20px 0 0 0;">
-        Puedes ver el estado de todas tus aplicaciones en tu dashboard personal.
+        Puedes ver el estado de todas tus candidaturas en tu dashboard personal.
     </p>
 @endsection

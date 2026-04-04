@@ -38,7 +38,7 @@
                         </a>
                         
                         @if(auth()->user()->isCandidate())
-                            <!-- Los candidatos acceden a aplicaciones y favoritos desde el dashboard -->
+                            <!-- Los candidatos acceden a candidaturas y favoritos desde el dashboard -->
                         @endif
                         
                         @if(auth()->user()->isEmployer())

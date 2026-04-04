@@ -67,7 +67,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <p class="text-slate-400 text-sm">Aplicaciones</p>
+                    <p class="text-slate-400 text-sm">Candidaturas</p>
                     <p class="text-2xl font-bold text-white">8</p>
                 </div>
             </div>
@@ -353,7 +353,7 @@
                         <span class="text-blue-400 font-medium">156</span>
                     </div>
                     <div class="flex items-center justify-between">
-                        <span class="text-slate-300 text-sm">Aplicaciones realizadas</span>
+                        <span class="text-slate-300 text-sm">Candidaturas realizadas</span>
                         <span class="text-purple-400 font-medium">8</span>
                     </div>
                     <div class="flex items-center justify-between">
