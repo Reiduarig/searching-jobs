@@ -51,6 +51,15 @@
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names='server,queue,vite'"
         ],
+        "qa": [
+            "@rector --dry-run",
+            "@pint --dirty",
+            "@phpstan",
+            "@test"
+        ],
+        "rector": "@php vendor/bin/rector",
+        "pint": "@php vendor/bin/pint",
+        "phpstan": "@php vendor/bin/phpstan analyse",
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
